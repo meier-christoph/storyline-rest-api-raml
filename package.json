@@ -1,0 +1,9 @@
+{
+  "name": "storyline-rest-api-raml",
+  "version": "1.0.0",
+  "devDependencies": {
+    "gulp": "^3.8.7",
+    "gulp-raml2html": "^0.1.7",
+    "raml-parser": "^0.8.7"
+  }
+}

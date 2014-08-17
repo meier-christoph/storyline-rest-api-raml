@@ -1,0 +1,53 @@
+
+usage: |
+  This resourceType should be used for any single item.
+
+description: |
+  Single <<resourcePathName>>.
+
+uriParameters:
+  id:
+    description: |
+      The unique identifier of the <<resourcePathName | !singularize>>.
+
+
+get:
+  is: [ base, rate-limited ]
+  description: |
+    Returns all the details about the <<resourcePathName | !singularize>>.
+  
+  responses:
+    200:
+
+
+put:
+  is: [ base, rate-limited ]
+  description: |
+    Update the <<resourcePathName | !singularize>>.
+
+  responses:
+    200:
+      description: |
+        The <<resourcePathName | !singularize>> was updated successfully.
+
+
+patch:
+  is: [ base, rate-limited ]
+  description: |
+    Update the <<resourcePathName | !singularize>> (partial).
+
+  responses:
+    200:
+      description: |
+        The <<resourcePathName | !singularize>> was updated successfully.
+
+
+delete:
+  is: [ base, rate-limited ]
+  description: |
+    Delete the <<resourcePathName | !singularize>>.
+
+  responses:
+    204:
+      description: |
+        The <<resourcePathName | !singularize>> was deleted successfully.

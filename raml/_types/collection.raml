@@ -1,0 +1,32 @@
+
+usage: |
+  This resourceType should be used for any collection of items.
+
+description: |
+  The collection of <<resourcePathName>>.
+
+
+get:
+  is: [ base, rate-limited, paged, sortable ]
+  description: |
+    Returns all <<resourcePathName>>, optionally filtered.
+
+  responses:
+    200:
+
+
+post:
+  is: [ base, rate-limited ]
+  description: |
+    Create a new <<resourcePathName | !singularize>>.
+
+  responses:
+    201:
+      description: |
+        The new <<resourcePathName | !singularize>> was 
+        created successfully.
+
+      headers:
+        Location:
+          description: |
+            Absolute URL to the created resource.

@@ -1,0 +1,68 @@
+
+usage: |
+  Apply this to any method that is rate limited.
+
+description: |
+  Allow resources to give feedback about rate limiting.
+
+responses:
+  200?:
+    headers:
+      X-RateLimit-Limit:
+        description: |
+          Number of allowed requests in the current period.
+        type: integer
+
+      X-RateLimit-Remaining:
+        description: |
+          Number of remaining requests in the current period.
+        type: integer
+
+      X-RateLimit-Reset:
+        description: |
+          Number of seconds left in he current period.
+        type: integer
+
+  201?:
+    headers:
+      X-RateLimit-Limit:
+        description: |
+          Number of allowed requests in the current period.
+        type: integer
+
+      X-RateLimit-Remaining:
+        description: |
+          Number of remaining requests in the current period.
+        type: integer
+
+      X-RateLimit-Reset:
+        description: |
+          Number of seconds left in he current period.
+        type: integer
+
+  204?:
+    headers:
+      X-RateLimit-Limit:
+        description: |
+          Number of allowed requests in the current period.
+        type: integer
+
+      X-RateLimit-Remaining:
+        description: |
+          Number of remaining requests in the current period.
+        type: integer
+
+      X-RateLimit-Reset:
+        description: |
+          Number of seconds left in he current period.
+        type: integer
+
+  429:
+    description: |
+      Request was rejected due to rate limiting.
+
+    headers:
+      Retry-After:
+        description: |
+          Number of seconds to wait before making a new request.
+        type: integer

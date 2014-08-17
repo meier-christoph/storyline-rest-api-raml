@@ -1,0 +1,31 @@
+#%RAML 0.8
+---
+title: Storyline
+version: v1
+baseUri: https://api.{env}.storyline.lu/{version}
+baseUriParameters:
+  env:
+    description: Environment
+    enum: [ dev, test, uat, prod ]
+protocols: [ HTTPS ]
+mediaType: application/json
+
+documentation:
+  - title: Welcome to the Storyline RESTfull API documentation
+    content: !include _welcome.md
+
+resourceTypes:
+  - collection: !include _types/collection.raml
+  - member: !include _types/member.raml
+
+traits:
+  - base: !include _traits/base.raml
+  - rate-limited: !include _traits/rate-limited.raml
+  - secured: !include _traits/secured.raml
+  - searchable: !include _traits/searchable.raml
+  - paged: !include _traits/paged.raml
+  - sortable: !include _traits/sortable.raml
+  - restrictable: !include _traits/restrictable.raml
+
+/universes: !include _universes.raml
+/scenarios: !include _scenarios.raml

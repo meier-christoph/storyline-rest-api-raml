@@ -1,0 +1,64 @@
+
+usage: |
+  Apply this to any method that needs to be paged.
+
+description: |
+  Allow resources to be paged.
+
+queryParameters:
+  _limit:
+    description: |
+      Number of items available at most per page.
+
+      Adjust the number of items per page depending
+      on your needs.
+
+      Combine this with ```_offset``` to create 
+      paged collections.
+
+      Example(s):
+      ```
+        /messages?_limit=25
+        /messages?_limit=25&_offset=5
+      ```
+
+    type: integer
+    minimum: 1
+    default: 10
+
+  _offset:
+    description: |
+      Number of items to skip.
+
+      The offset is allways applied on the first
+      ```n``` items that would have been returned.
+
+      Use sorting for more control over the skipped
+      items as sorting is applied before the offset.
+
+      Combine this with ```_limit``` to create 
+      paged collections.
+
+      Example(s):
+      ```
+        /messages?_offset=5
+        /messages?_offset=5&_limit=25
+      ```
+
+    type: integer
+    minimum: 0
+    default: 0
+
+responses:
+  200:
+    headers:
+      Link:
+        description: |
+          Paged resources have a ```_first```, ```_previous```,
+          ```_next``` and ```_last``` link added automatically
+          to this header.
+
+      X-Total-Count:
+        description: |
+          Total number of items available.
+        type: integer

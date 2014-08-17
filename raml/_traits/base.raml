@@ -1,0 +1,27 @@
+
+usage: |
+  Apply this to all methods.
+
+description: |
+  Allow resources to give feedback about errors and failures.
+
+responses:
+  200?:
+    description: |
+      Success!
+
+  400:
+    description: |
+      Request was invalid.
+
+  402:
+    description: |
+      Request was valid but failed to execute.
+
+  404:
+    description: |
+      Requested item doesn't exist.
+
+  500:
+    description: |
+      Something is broken. Please contact support or admin.

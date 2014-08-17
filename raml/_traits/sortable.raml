@@ -1,0 +1,30 @@
+
+usage: |
+  Apply this to any method that needs to be sorted.
+
+description: |
+  Allow resources to be sorted.
+
+queryParameters:
+  _sort:
+    description: |
+      Fields used for sorting.
+
+      Use fields of nested resources using a ```.``` as 
+      separator between the resources.
+
+      Default sorting order is ascending. Prefix the field name
+      with ```-``` to change the order to descending.
+
+      Use a ```,``` to add multiple fields to the sorting on 
+      multiple levels.
+
+      Example(s):
+      ```
+        /messages?_sort=date
+        /messages?_sort=-date
+        /messages?_sort=user.last_name
+        /messages?_sort=user.last_name,-date
+      ```
+
+    type: string

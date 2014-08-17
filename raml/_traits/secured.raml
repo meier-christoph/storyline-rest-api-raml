@@ -1,0 +1,16 @@
+
+usage: |
+  Apply this to any method that needs to be secured.
+
+description: |
+  Allow resources to require authentication.
+
+responses:
+  401:
+    description: |
+      Authentication credentials were missing or invalid.
+
+  403:
+    description: |
+      Authentication succeeded but authenticated user doesn't
+      have access to resource.

@@ -1,0 +1,39 @@
+
+usage: |
+  Apply this to any method that needs to be restrictable.
+
+description: |
+  Allow resources to be restricted i.e. to return only the 
+  fields specified.
+
+queryParameters:
+  _fields:
+    description: |
+      Fields used for restricting.
+
+      Only the fields that are specified by this parameter
+      will be available in the body of the response.
+      Use this feature to increase performance on the client
+      by selecting only fields you really need.
+
+      Add multiple fields by using a ```,``` as separator.
+
+      Use ```.``` to add fields of nested resources.
+
+      Sometimes it is easier to exclude only some fields from
+      the response, instead of explicitly listing those you 
+      want to keep. Use a ```-``` in front of a field to do 
+      exactly that.
+
+      Note that excluding has higher priority than including
+      i.e. a single exclude will whipe any includes for that
+      request.
+      
+      Example(s):
+      ```
+        /messages?_fields=content
+        /messages?_fields=content,user.last_name,date
+        /messages?_fields=-content
+      ```
+
+    type: string

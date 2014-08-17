@@ -1,0 +1,22 @@
+
+usage: |
+  Apply this to any method that needs to be searchable using
+  just plain text or keywords.
+
+description: |
+  Allow resources to be searchable.
+
+queryParameters:
+  _q:
+    description: |
+      Query string to search for.
+
+      Depending on the resource the query string may
+      only be applied to a limited number of fields.
+
+      Example(s):
+      ```
+        /messages?_q=storyline
+      ```
+
+    type: string
