@@ -1,9 +1,18 @@
 {
-  "name": "storyline-rest-api-raml",
-  "version": "1.0.0",
-  "devDependencies": {
-    "gulp": "^3.8.7",
-    "gulp-raml2html": "^0.1.7",
-    "raml-parser": "^0.8.7"
-  }
+    "name": "storyline-rest-api-raml",
+    "version": "1.0.0",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/meier-christoph/storyline-rest-api-raml.git"
+    },
+    "devDependencies": {
+        "gulp": "^3.8",
+        "gulp-raml2html": "^0.1",
+        "raml-parser": "^0.8"
+    },
+    "scripts": {
+        "postinstall": "gulp default",
+        "watch": "gulp watch",
+        "doc": "gulp doc"
+    }
 }
