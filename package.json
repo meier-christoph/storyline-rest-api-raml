@@ -6,9 +6,9 @@
         "url": "git://github.com/meier-christoph/storyline-rest-api-raml.git"
     },
     "devDependencies": {
-        "gulp": "^3.8",
-        "gulp-raml2html": "^0.1",
-        "raml-parser": "^0.8"
+        "gulp": "latest",
+        "gulp-raml2html": "latest",
+        "raml-parser": "latest"
     },
     "scripts": {
         "postinstall": "gulp default",
